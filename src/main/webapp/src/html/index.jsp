@@ -3,6 +3,15 @@
 <!doctype html>
 <html lang="en">
 
+<%
+    // 세션에서 로그인 여부 확인
+    String userId = (String) session.getAttribute("userId");
+
+    if (userId == null) { // 로그인되지 않은 사용자
+        out.println("<script>alert('로그인 후 이용 가능합니다.'); location.href='authentication-login.jsp';</script>");
+        return; // 이후 코드 실행 중지
+    }
+%>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">

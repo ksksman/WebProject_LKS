@@ -28,7 +28,7 @@ public class MemberDAO {
         String sql = "INSERT INTO member (user_id, user_pwd, user_name, phone_num, email, gender) VALUES (?, ?, ?, ?, ?, ?)";
         try {
             pstmt = conn.prepareStatement(sql);
-            pstmt.setInt(1, member.getUserId());
+            pstmt.setString(1, member.getUserId()); // user_id를 문자열로 처리
             pstmt.setString(2, member.getUserPwd());
             pstmt.setString(3, member.getUserName());
             pstmt.setString(4, member.getPhoneNum());
@@ -41,12 +41,17 @@ public class MemberDAO {
             e.printStackTrace();
             return false;
         } finally {
-            try {
-                if (pstmt != null) pstmt.close();
-                if (conn != null) conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            closeResources();
+        }
+    }
+
+    // 자원 해제 메서드
+    private void closeResources() {
+        try {
+            if (pstmt != null) pstmt.close();
+            if (conn != null) conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 }
