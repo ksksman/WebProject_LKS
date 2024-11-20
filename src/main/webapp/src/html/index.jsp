@@ -53,8 +53,8 @@ if (userId == null) {
 						if (userId != null) {
 						%>
 						<!-- 로그인된 상태: 로그아웃 버튼 표시 -->
-						<li class="nav-item"><span class="nav-link">안녕하세요, <strong> <%= userName %></strong>
-								님!
+						<li class="nav-item"><span class="nav-link">안녕하세요, <strong>
+									<%= userName %></strong> 님!
 						</span></li>
 						<li class="nav-item"><a href="authentication-logout.jsp"
 							class="btn btn-danger ms-2">로그아웃</a></li>
@@ -85,17 +85,11 @@ if (userId == null) {
 							class="ti ti-dots nav-small-cap-icon fs-6"></i> <span
 							class="hide-menu">UI COMPONENTS</span></li>
 						<li class="sidebar-item"><a class="sidebar-link"
-							href="./boardList.jsp" aria-expanded="false"> <span>
-									<iconify-icon icon="solar:layers-minimalistic-bold-duotone"
-										class="fs-6"></iconify-icon>
+							href="./boardList.do" aria-expanded="false"> <span> <iconify-icon
+										icon="solar:layers-minimalistic-bold-duotone" class="fs-6"></iconify-icon>
 							</span> <span class="hide-menu">자유게시판</span>
 						</a></li>
-						<li class="sidebar-item"><a class="sidebar-link"
-							href="./ui-alerts.jsp" aria-expanded="false"> <span>
-									<iconify-icon icon="solar:danger-circle-bold-duotone"
-										class="fs-6"></iconify-icon>
-							</span> <span class="hide-menu">Alerts</span>
-						</a></li>
+
 						<li class="sidebar-item"><a class="sidebar-link"
 							href="./ui-card.jsp" aria-expanded="false"> <span> <iconify-icon
 										icon="solar:bookmark-square-minimalistic-bold-duotone"
@@ -117,6 +111,11 @@ if (userId == null) {
 								icon="solar:menu-dots-linear" class="nav-small-cap-icon fs-6"
 								class="fs-6"></iconify-icon> <span class="hide-menu">AUTH</span>
 						</li>
+						<li class="sidebar-item"><a class="sidebar-link"
+							href="./myPage.do" aria-expanded="false"> <span> <iconify-icon
+										icon="solar:danger-circle-bold-duotone" class="fs-6"></iconify-icon>
+							</span> <span class="hide-menu">마이페이지</span>
+						</a></li>
 
 
 						</li>

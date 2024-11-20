@@ -76,6 +76,33 @@
             background-color: #0056b3;
         }
 
+        /* 페이징 스타일 */
+        .pagination {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .pagination a, .pagination strong {
+            display: inline-block;
+            margin: 0 5px;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .pagination strong {
+            background-color: #0056b3;
+            font-weight: bold;
+        }
+
+        .pagination a:hover {
+            background-color: #0056b3;
+        }
+
+        /* 뒤로가기 버튼 스타일 */
         .footer-btn {
             position: fixed;
             bottom: 20px;
@@ -94,46 +121,10 @@
             background-color: #218838;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
-
-        .message {
-            text-align: center;
-            margin: 10px auto;
-            font-size: 14px;
-            color: red;
-        }
     </style>
-</head>
-<head>
-    <title>게시글 목록</title>
-    <style>
-        /* 기존 CSS 유지 */
-    </style>
-    <script>
-        // 경고창을 표시하는 함수
-        function showAlert(message) {
-            alert(message);
-        }
-    </script>
 </head>
 <body>
     <h1>게시글 목록</h1>
-
-    <!-- 경고 메시지 처리 -->
-    <c:if test="${param.error == 'not_authorized'}">
-        <script>
-            showAlert('다른 사용자의 게시물을 삭제할 수 없습니다.');
-        </script>
-    </c:if>
-    <c:if test="${param.error == 'delete_failed'}">
-        <script>
-            showAlert('게시물을 삭제하는 중 오류가 발생했습니다.');
-        </script>
-    </c:if>
-    <c:if test="${param.success == 'deleted'}">
-        <script>
-            showAlert('게시물이 성공적으로 삭제되었습니다.');
-        </script>
-    </c:if>
 
     <!-- 로그인 사용자 확인 -->
     <c:if test="${userId != null}">
@@ -146,23 +137,45 @@
 
     <!-- 게시글 목록 테이블 -->
     <table>
-        <tr>
-            <th>ID</th>
-            <th>제목</th>
-            <th>작성자</th>
-            <th>작성일</th>
-        </tr>
-        <c:forEach var="board" items="${boardList}">
+        <thead>
             <tr>
-                <td>${board.id}</td>
-                <td><a href="boardDetail.do?id=${board.id}">${board.title}</a></td>
-                <td>${board.username}</td>
-                <td>${board.createdAt}</td>
+                <th>ID</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>작성일</th>
             </tr>
-        </c:forEach>
+        </thead>
+        <tbody>
+            <c:forEach var="board" items="${boardList}">
+                <tr>
+                    <td>${board.id}</td>
+                    <td><a href="boardDetail.do?id=${board.id}">${board.title}</a></td>
+                    <td>${board.userId}</td>
+                    <td>${board.createdAt}</td>
+                </tr>
+            </c:forEach>
+        </tbody>
     </table>
 
-    <!-- 귀로가기 버튼 -->
-    <a href="../html/index.jsp" class="footer-btn">뒤로가기</a>
+    <!-- 페이징 -->
+    <div class="pagination">
+        <c:if test="${currentPage > 1}">
+            <a href="boardList.do?page=${currentPage - 1}">이전</a>
+        </c:if>
+        <c:forEach begin="1" end="${totalPages}" var="pageNum">
+            <c:if test="${pageNum == currentPage}">
+                <strong>${pageNum}</strong>
+            </c:if>
+            <c:if test="${pageNum != currentPage}">
+                <a href="boardList.do?page=${pageNum}">${pageNum}</a>
+            </c:if>
+        </c:forEach>
+        <c:if test="${currentPage < totalPages}">
+            <a href="boardList.do?page=${currentPage + 1}">다음</a>
+        </c:if>
+    </div>
+
+    <!-- 뒤로가기 버튼 -->
+    <a href="index.jsp" class="footer-btn">뒤로가기</a>
 </body>
 </html>

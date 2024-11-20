@@ -91,6 +91,23 @@
     <url-pattern>/src/html/boardDelete.do</url-pattern>
 </servlet-mapping>
 
-  
+<servlet>
+    <servlet-name>MyPageController</servlet-name>
+    <servlet-class>controller.MyPageController</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>MyPageController</servlet-name>
+    <url-pattern>/src/html/myPage.do</url-pattern> <!-- 적절한 URL로 매핑 -->
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>MemberEditController</servlet-name>
+    <servlet-class>controller.MemberEditController</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>MemberEditController</servlet-name>
+    <url-pattern>/src/html/memberEdit.do</url-pattern> <!-- 적절한 URL로 매핑 -->
+</servlet-mapping>
+
   
 </web-app>
