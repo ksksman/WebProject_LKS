@@ -1,4 +1,5 @@
-<!doctype html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <html lang="en">
 
 <head>
@@ -19,7 +20,7 @@
       <!-- Sidebar scroll-->
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
-          <a href="./index.html" class="text-nowrap logo-img">
+          <a href="./index.jsp" class="text-nowrap logo-img">
             <img src="../assets/images/logos/logo-light.svg" alt="" />
           </a>
           <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
@@ -34,7 +35,7 @@
               <span class="hide-menu">Home</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./index.html" aria-expanded="false">
+              <a class="sidebar-link" href="./index.jsp" aria-expanded="false">
                 <span>
                   <iconify-icon icon="solar:home-smile-bold-duotone" class="fs-6"></iconify-icon>
                 </span>
@@ -46,7 +47,7 @@
               <span class="hide-menu">UI COMPONENTS</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-buttons.html" aria-expanded="false">
+              <a class="sidebar-link" href="./ui-buttons.jsp" aria-expanded="false">
                 <span>
                   <iconify-icon icon="solar:layers-minimalistic-bold-duotone" class="fs-6"></iconify-icon>
                 </span>
@@ -54,7 +55,7 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-alerts.html" aria-expanded="false">
+              <a class="sidebar-link" href="./ui-alerts.jsp" aria-expanded="false">
                 <span>
                   <iconify-icon icon="solar:danger-circle-bold-duotone" class="fs-6"></iconify-icon>
                 </span>
@@ -62,7 +63,7 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-card.html" aria-expanded="false">
+              <a class="sidebar-link" href="./ui-card.jsp" aria-expanded="false">
                 <span>
                   <iconify-icon icon="solar:bookmark-square-minimalistic-bold-duotone" class="fs-6"></iconify-icon>
                 </span>
@@ -70,7 +71,7 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-forms.html" aria-expanded="false">
+              <a class="sidebar-link" href="./ui-forms.jsp" aria-expanded="false">
                 <span>
                   <iconify-icon icon="solar:file-text-bold-duotone" class="fs-6"></iconify-icon>
                 </span>
@@ -78,7 +79,7 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-typography.html" aria-expanded="false">
+              <a class="sidebar-link" href="./ui-typography.jsp" aria-expanded="false">
                 <span>
                   <iconify-icon icon="solar:text-field-focus-bold-duotone" class="fs-6"></iconify-icon>
                 </span>
@@ -90,7 +91,7 @@
               <span class="hide-menu">AUTH</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
+              <a class="sidebar-link" href="./authentication-login.jsp" aria-expanded="false">
                 <span>
                   <iconify-icon icon="solar:login-3-bold-duotone" class="fs-6"></iconify-icon>
                 </span>
@@ -98,7 +99,7 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./authentication-register.html" aria-expanded="false">
+              <a class="sidebar-link" href="./authentication-register.jsp" aria-expanded="false">
                 <span>
                   <iconify-icon icon="solar:user-plus-rounded-bold-duotone" class="fs-6"></iconify-icon>
                 </span>
@@ -110,7 +111,7 @@
               <span class="hide-menu">EXTRA</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./icon-tabler.html" aria-expanded="false">
+              <a class="sidebar-link" href="./icon-tabler.jsp" aria-expanded="false">
                 <span>
                   <iconify-icon icon="solar:sticker-smile-circle-2-bold-duotone" class="fs-6"></iconify-icon>
                 </span>
@@ -118,7 +119,7 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./sample-page.html" aria-expanded="false">
+              <a class="sidebar-link" href="./sample-page.jsp" aria-expanded="false">
                 <span>
                   <iconify-icon icon="solar:planet-3-bold-duotone" class="fs-6"></iconify-icon>
                 </span>
@@ -187,7 +188,7 @@
                       <i class="ti ti-list-check fs-6"></i>
                       <p class="mb-0 fs-3">My Task</p>
                     </a>
-                    <a href="./authentication-login.html" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+                    <a href="./authentication-login.jsp" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
                   </div>
                 </div>
               </li>
@@ -203,28 +204,28 @@
             <div class="card mb-0">
               <div class="card-body p-4">
                 <div class="alert alert-primary" role="alert">
-                  A simple primary alert—check it out!
+                  A simple primary alertâcheck it out!
                 </div>
                 <div class="alert alert-secondary" role="alert">
-                  A simple secondary alert—check it out!
+                  A simple secondary alertâcheck it out!
                 </div>
                 <div class="alert alert-success" role="alert">
-                  A simple success alert—check it out!
+                  A simple success alertâcheck it out!
                 </div>
                 <div class="alert alert-danger" role="alert">
-                  A simple danger alert—check it out!
+                  A simple danger alertâcheck it out!
                 </div>
                 <div class="alert alert-warning" role="alert">
-                  A simple warning alert—check it out!
+                  A simple warning alertâcheck it out!
                 </div>
                 <div class="alert alert-info" role="alert">
-                  A simple info alert—check it out!
+                  A simple info alertâcheck it out!
                 </div>
                 <div class="alert alert-light" role="alert">
-                  A simple light alert—check it out!
+                  A simple light alertâcheck it out!
                 </div>
                 <div class="alert alert-dark" role="alert">
-                  A simple dark alert—check it out!
+                  A simple dark alertâcheck it out!
                 </div>
               </div>
             </div>

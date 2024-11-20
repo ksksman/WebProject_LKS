@@ -1,10 +1,11 @@
-<!doctype html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SeoDash Free Bootstrap Admin Template by Adminmart</title>
+  <title>ê²ìí ë§ë¤ê¸°</title>
   <link rel="shortcut icon" type="image/png" href="../assets/images/logos/seodashlogo.png" />
   <link rel="stylesheet" href="../../node_modules/simplebar/dist/simplebar.min.css">
   <link rel="stylesheet" href="../assets/css/styles.min.css" />
@@ -19,7 +20,7 @@
       <!-- Sidebar scroll-->
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
-          <a href="./index.html" class="text-nowrap logo-img">
+          <a href="./index.jsp" class="text-nowrap logo-img">
             <img src="../assets/images/logos/logo-light.svg" alt="" />
           </a>
           <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
@@ -34,7 +35,7 @@
               <span class="hide-menu">Home</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./index.html" aria-expanded="false">
+              <a class="sidebar-link" href="./index.jsp" aria-expanded="false">
                 <span>
                   <iconify-icon icon="solar:home-smile-bold-duotone" class="fs-6"></iconify-icon>
                 </span>
@@ -46,7 +47,7 @@
               <span class="hide-menu">UI COMPONENTS</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-buttons.html" aria-expanded="false">
+              <a class="sidebar-link" href="./ui-buttons.jsp" aria-expanded="false">
                 <span>
                   <iconify-icon icon="solar:layers-minimalistic-bold-duotone" class="fs-6"></iconify-icon>
                 </span>
@@ -54,7 +55,7 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-alerts.html" aria-expanded="false">
+              <a class="sidebar-link" href="./ui-alerts.jsp" aria-expanded="false">
                 <span>
                   <iconify-icon icon="solar:danger-circle-bold-duotone" class="fs-6"></iconify-icon>
                 </span>
@@ -62,7 +63,7 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-card.html" aria-expanded="false">
+              <a class="sidebar-link" href="./ui-card.jsp" aria-expanded="false">
                 <span>
                   <iconify-icon icon="solar:bookmark-square-minimalistic-bold-duotone" class="fs-6"></iconify-icon>
                 </span>
@@ -70,7 +71,7 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-forms.html" aria-expanded="false">
+              <a class="sidebar-link" href="./ui-forms.jsp" aria-expanded="false">
                 <span>
                   <iconify-icon icon="solar:file-text-bold-duotone" class="fs-6"></iconify-icon>
                 </span>
@@ -78,7 +79,7 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-typography.html" aria-expanded="false">
+              <a class="sidebar-link" href="./ui-typography.jsp" aria-expanded="false">
                 <span>
                   <iconify-icon icon="solar:text-field-focus-bold-duotone" class="fs-6"></iconify-icon>
                 </span>
@@ -90,7 +91,7 @@
               <span class="hide-menu">AUTH</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
+              <a class="sidebar-link" href="./authentication-login.jsp" aria-expanded="false">
                 <span>
                   <iconify-icon icon="solar:login-3-bold-duotone" class="fs-6"></iconify-icon>
                 </span>
@@ -98,7 +99,7 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./authentication-register.html" aria-expanded="false">
+              <a class="sidebar-link" href="./authentication-register.jsp" aria-expanded="false">
                 <span>
                   <iconify-icon icon="solar:user-plus-rounded-bold-duotone" class="fs-6"></iconify-icon>
                 </span>
@@ -110,7 +111,7 @@
               <span class="hide-menu">EXTRA</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./icon-tabler.html" aria-expanded="false">
+              <a class="sidebar-link" href="./icon-tabler.jsp" aria-expanded="false">
                 <span>
                   <iconify-icon icon="solar:sticker-smile-circle-2-bold-duotone" class="fs-6"></iconify-icon>
                 </span>
@@ -118,7 +119,7 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./sample-page.html" aria-expanded="false">
+              <a class="sidebar-link" href="./sample-page.jsp" aria-expanded="false">
                 <span>
                   <iconify-icon icon="solar:planet-3-bold-duotone" class="fs-6"></iconify-icon>
                 </span>
@@ -187,7 +188,7 @@
                       <i class="ti ti-list-check fs-6"></i>
                       <p class="mb-0 fs-3">My Task</p>
                     </a>
-                    <a href="./authentication-login.html" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+                    <a href="./authentication-login.jsp" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
                   </div>
                 </div>
               </li>
@@ -199,48 +200,8 @@
       <div class="container-fluid">
         <div class="card">
           <div class="card-body">
-            <div class="row">
-              <div class="col-md-4">
-                <h5 class="card-title fw-semibold mb-4">Card</h5>
-                <div class="card">
-                  <img src="../assets/images/products/s4.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                      the
-                      card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <h5 class="card-title fw-semibold mb-4">Header and footer</h5>
-                <div class="card">
-                  <div class="card-header">
-                    Featured
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <h5 class="card-title fw-semibold mb-4">Titles, text, and links</h5>
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                      the
-                      card's content.</p>
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <h5 class="card-title fw-semibold mb-4">Sample Page</h5>
+            <p class="mb-0">This is a sample page </p>
           </div>
         </div>
         <div class="py-6 px-6 text-center">

@@ -33,10 +33,64 @@
 </session-config>
 
 
+
+
+
+ <servlet>
+    <servlet-name>BoardListController</servlet-name>
+    <servlet-class>controller.BoardListController</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>BoardListController</servlet-name>
+    <url-pattern>/src/html/boardList.do</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>BoardWriteController</servlet-name>
+    <servlet-class>controller.BoardWriteController</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>BoardWriteController</servlet-name>
+    <url-pattern>/src/html/boardWrite.do</url-pattern>
+</servlet-mapping>
+
+
+ <servlet>
+    <servlet-name>BoardDetailController</servlet-name>
+    <servlet-class>controller.BoardDetailController</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>BoardDetailController</servlet-name>
+    <url-pattern>/src/html/boardDetail.do</url-pattern>
+</servlet-mapping> 
   
-  
-  
-  
+  <servlet>
+    <servlet-name>BoardEditController</servlet-name>
+    <servlet-class>controller.BoardEditController</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>BoardEditController</servlet-name>
+    <url-pattern>/src/html/boardEdit.do</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>BoardUpdateController</servlet-name>
+    <servlet-class>controller.BoardUpdateController</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>BoardUpdateController</servlet-name>
+    <url-pattern>/src/html/boardUpdate.do</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>BoardDeleteController</servlet-name>
+    <servlet-class>controller.BoardDeleteController</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>BoardDeleteController</servlet-name>
+    <url-pattern>/src/html/boardDelete.do</url-pattern>
+</servlet-mapping>
+
   
   
 </web-app>

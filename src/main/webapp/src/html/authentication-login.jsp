@@ -12,6 +12,12 @@
 </head>
 
 <body>
+<%
+    String userName = (String) session.getAttribute("userName");
+    if (userName == null) {
+        userName = "Guest"; // 기본값 설정
+    }
+%>
   <%
     // 데이터베이스 연결 설정
     String url = "jdbc:oracle:thin:@localhost:1521:xe";
@@ -37,10 +43,14 @@
             pstmt.setString(2, userPwd);
             rs = pstmt.executeQuery();
 
+
             if (rs.next()) {
+                userName = rs.getString("user_name");
                 loginSuccess = true;
-                // 로그인 성공 시 세션에 userId 설정
-                session.setAttribute("userId", userId); // 세션에 user_id 저장
+
+                // 로그인 성공 시 세션에 user_id와 user_name 저장
+                session.setAttribute("userId", userId);
+                session.setAttribute("userName", userName);
             }
 
         } catch (Exception e) {

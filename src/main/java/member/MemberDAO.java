@@ -1,57 +1,68 @@
-// MemberDAO.java
 package member;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class MemberDAO {
-    private Connection conn;
-    private PreparedStatement pstmt;
-    private final String url = "jdbc:oracle:thin:@localhost:1521:xe";
-    private final String dbUser = "webproject_db";
-    private final String dbPwd = "1234";
-
-    // 데이터베이스 연결
-    public MemberDAO() {
-        try {
-            Class.forName("oracle.jdbc.OracleDriver");
-            conn = DriverManager.getConnection(url, dbUser, dbPwd);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    // 데이터베이스 연결 메서드
+    private Connection getConnection() throws SQLException {
+        String url = "jdbc:oracle:thin:@localhost:1521:xe";
+        String username = "webproject_db";
+        String password = "1234";
+        return DriverManager.getConnection(url, username, password);
     }
 
-    // 회원 정보 삽입 메서드
+    // 사용자 정보 삽입 (회원 가입)
     public boolean insertMember(MemberDTO member) {
-        String sql = "INSERT INTO member (user_id, user_pwd, user_name, phone_num, email, gender) VALUES (?, ?, ?, ?, ?, ?)";
-        try {
-            pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, member.getUserId()); // user_id를 문자열로 처리
-            pstmt.setString(2, member.getUserPwd());
-            pstmt.setString(3, member.getUserName());
-            pstmt.setString(4, member.getPhoneNum());
-            pstmt.setString(5, member.getEmail());
-            pstmt.setString(6, member.getGender());
+        String sql = "INSERT INTO member (user_id, user_pwd, user_name, phone_num, email, gender, manager_id) " +
+                     "VALUES (?, ?, ?, ?, ?, ?, ?)";
+        boolean result = false;
 
-            int result = pstmt.executeUpdate();
-            return result > 0; // 삽입 성공 시 true 반환
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, member.getUserId());
+            stmt.setString(2, member.getUserPwd());
+            stmt.setString(3, member.getUserName());
+            stmt.setString(4, member.getPhoneNum());
+            stmt.setString(5, member.getEmail());
+            stmt.setString(6, member.getGender());
+            stmt.setInt(7, member.getManagerId()); // 관리자 ID (옵션 필드)
+
+            int rowsInserted = stmt.executeUpdate();
+            result = rowsInserted > 0; // 삽입 성공 여부 확인
+
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
-        } finally {
-            closeResources();
         }
+        return result;
     }
 
-    // 자원 해제 메서드
-    private void closeResources() {
-        try {
-            if (pstmt != null) pstmt.close();
-            if (conn != null) conn.close();
+    // 특정 사용자 ID로 사용자 정보 가져오기
+    public MemberDTO getMemberById(String userId) {
+        MemberDTO member = null;
+        String sql = "SELECT * FROM member WHERE user_id = ?";
+        
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            
+            stmt.setString(1, userId);
+            
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    member = new MemberDTO(
+                            rs.getString("user_id"),
+                            rs.getString("user_pwd"),
+                            rs.getString("user_name"),
+                            rs.getString("phone_num"),
+                            rs.getString("email"),
+                            rs.getString("gender"),
+                            rs.getInt("manager_id")
+                    );
+                }
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return member;
     }
 }
