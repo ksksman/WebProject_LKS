@@ -91,7 +91,7 @@ if (userId == null) {
 						</a></li>
 
 						<li class="sidebar-item"><a class="sidebar-link"
-							href="./ui-card.jsp" aria-expanded="false"> <span> <iconify-icon
+							href="./qnaBoard.do" aria-expanded="false"> <span> <iconify-icon
 										icon="solar:bookmark-square-minimalistic-bold-duotone"
 										class="fs-6"></iconify-icon>
 							</span> <span class="hide-menu">Card</span>

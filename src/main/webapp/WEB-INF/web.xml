@@ -108,6 +108,22 @@
     <servlet-name>MemberEditController</servlet-name>
     <url-pattern>/src/html/memberEdit.do</url-pattern> <!-- 적절한 URL로 매핑 -->
 </servlet-mapping>
+<servlet>
+    <servlet-name>QnaBoardController</servlet-name>
+    <servlet-class>controller.QnaBoardController</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>QnaBoardController</servlet-name>
+    <url-pattern>/src/html/qnaBoard.do</url-pattern>
+</servlet-mapping>
+<servlet>
+    <servlet-name>QnaCommentController</servlet-name>
+    <servlet-class>controller.QnaCommentController</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>QnaCommentController</servlet-name>
+    <url-pattern>/src/html/qnaComment.do</url-pattern>
+</servlet-mapping>
 
   
 </web-app>
