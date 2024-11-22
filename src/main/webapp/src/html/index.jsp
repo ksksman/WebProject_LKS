@@ -94,7 +94,7 @@ if (userId == null) {
 							href="./qnaBoard.do" aria-expanded="false"> <span> <iconify-icon
 										icon="solar:bookmark-square-minimalistic-bold-duotone"
 										class="fs-6"></iconify-icon>
-							</span> <span class="hide-menu">Card</span>
+							</span> <span class="hide-menu">Q&A 게시판</span>
 						</a></li>
 						<li class="sidebar-item"><a class="sidebar-link"
 							href="./ui-forms.jsp" aria-expanded="false"> <span> <iconify-icon
