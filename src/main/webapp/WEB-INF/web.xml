@@ -124,6 +124,21 @@
     <servlet-name>QnaCommentController</servlet-name>
     <url-pattern>/src/html/qnaComment.do</url-pattern>
 </servlet-mapping>
-
+    <servlet>
+        <servlet-name>FilesController</servlet-name>
+        <servlet-class>controller.FilesController</servlet-class>
+        
+        <multipart-config>
+        	<max-file-size>10285760</max-file-size>
+        	<max-request-size>10485760</max-request-size>
+        </multipart-config>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FilesController</servlet-name>
+        <url-pattern>/src/html/files.do</url-pattern>
+        
+    </servlet-mapping>
+    
+ 
   
 </web-app>

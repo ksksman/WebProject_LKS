@@ -97,9 +97,9 @@ if (userId == null) {
 							</span> <span class="hide-menu">Q&A 게시판</span>
 						</a></li>
 						<li class="sidebar-item"><a class="sidebar-link"
-							href="./ui-forms.jsp" aria-expanded="false"> <span> <iconify-icon
+							href="./files.do?action=list" aria-expanded="false"> <span> <iconify-icon
 										icon="solar:file-text-bold-duotone" class="fs-6"></iconify-icon>
-							</span> <span class="hide-menu">Forms</span>
+							</span> <span class="hide-menu">자료실 게시판</span>
 						</a></li>
 						<li class="sidebar-item"><a class="sidebar-link"
 							href="./ui-typography.jsp" aria-expanded="false"> <span>
